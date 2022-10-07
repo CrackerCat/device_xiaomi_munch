@@ -8,13 +8,14 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Inherit some common Spark stuff.
-$(call inherit-product, vendor/spark/config/common_full_phone.mk)
+# Inherit some common Lineage stuff.
+$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
-# Inherit from alioth device
+# Inherit from Munch device
 $(call inherit-product, device/xiaomi/munch/device.mk)
 
-PRODUCT_NAME := spark_munch
+# Device identifiers. These must come after all inclusions.
+PRODUCT_NAME := lineage_munch
 PRODUCT_DEVICE := munch
 PRODUCT_MANUFACTURER := Xiaomi
 PRODUCT_BRAND := POCO
