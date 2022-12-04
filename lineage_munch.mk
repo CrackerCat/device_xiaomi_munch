@@ -15,7 +15,9 @@ $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 $(call inherit-product, device/xiaomi/munch/device.mk)
 
 # Include GMS by default, but rely on environment variable just in case we don't want to build with GMS conditionally
+ifneq ($(NO_GMS),false)
 $(call inherit-product, vendor/gapps/arm64/arm64-vendor.mk)
+endif
 
 TARGET_SUPPORTS_CALL_RECORDING := true
 
